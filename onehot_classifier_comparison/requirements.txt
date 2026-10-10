@@ -1,0 +1,4 @@
+numpy>=1.26
+scikit-learn>=1.5
+lightgbm>=4.0
+torch>=2.0

@@ -1,0 +1,30 @@
+{
+  "positive_retained": 3573,
+  "negative_retained": 3571,
+  "positive_removed": 0,
+  "negative_removed": 2,
+  "retained_lengths": {
+    "31": 7144
+  },
+  "center_residue": "K",
+  "input_shape": [
+    31,
+    21
+  ],
+  "alphabet": "ACDEFGHIKLMNPQRSTVWYX",
+  "device": "cuda",
+  "classifier": {
+    "architecture": "BiLSTM + LayerNorm + MultiheadAttention + GELU + Dropout + residual FC",
+    "hidden_size": 64,
+    "attention_heads": 4,
+    "dropout": 0.5,
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "weight_decay": 0.005,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "cpu_threads": 4,
+    "validation_scope": "10 percent of each training fold"
+  }
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+
+.venv/
+.venv_gpu/
+
+~$*.docx
+
+rendered_report/
+实验总结/rendered*/
+实验总结/*.pdf

@@ -1,0 +1,33 @@
+{
+  "positive_retained": 3573,
+  "negative_retained": 3571,
+  "positive_removed": 0,
+  "negative_removed": 2,
+  "retained_lengths": {
+    "31": 7144
+  },
+  "center_residue": "K",
+  "feature_dimensions": {
+    "AAC": 20,
+    "PWAA": 21,
+    "EBGW": 15,
+    "KMER_k2": 441,
+    "DR_d3": 1344
+  },
+  "total_feature_dimension": 1841,
+  "selector": {
+    "model": "LGBMClassifier",
+    "importance": "split",
+    "threshold": "> 2",
+    "n_estimators": 500,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "num_leaves": 15,
+    "selection_scope": "training fold only"
+  },
+  "classifier": {
+    "model": "LogisticRegression",
+    "solver": "liblinear",
+    "max_iter": 3000
+  }
+}

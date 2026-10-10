@@ -1,0 +1,56 @@
+{
+  "device": "cuda",
+  "positive_retained": 3573,
+  "negative_retained": 3571,
+  "positive_removed": 0,
+  "negative_removed": 2,
+  "retained_lengths": {
+    "31": 7144
+  },
+  "input_shape": [
+    31,
+    21
+  ],
+  "outer_cv": "stratified five-fold",
+  "inner_selection": "stratified 15 percent validation split within each outer training fold",
+  "candidates": [
+    {
+      "name": "A",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "dropout": 0.1,
+      "hidden_size": 64
+    },
+    {
+      "name": "B",
+      "learning_rate": 0.001,
+      "weight_decay": 0.001,
+      "dropout": 0.3,
+      "hidden_size": 64
+    },
+    {
+      "name": "C",
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "dropout": 0.3,
+      "hidden_size": 64
+    },
+    {
+      "name": "D",
+      "learning_rate": 0.0005,
+      "weight_decay": 1e-05,
+      "dropout": 0.1,
+      "hidden_size": 32
+    }
+  ],
+  "optimizer": "AdamW",
+  "scheduler": {
+    "name": "linear warmup plus cosine decay",
+    "warmup_epochs": 5,
+    "warmup_start_factor": 0.1,
+    "minimum_learning_rate": 1e-05,
+    "schedule_horizon_epochs": 60
+  },
+  "max_epochs": 60,
+  "early_stopping_patience": 10
+}

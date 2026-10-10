@@ -1,0 +1,29 @@
+{
+  "positive_retained": 3573,
+  "negative_retained": 3571,
+  "positive_removed": 0,
+  "negative_removed": 2,
+  "retained_lengths": {
+    "31": 7144
+  },
+  "center_residue": "K",
+  "feature_dimensions": {
+    "AAC": 20,
+    "PWAA": 21,
+    "EBGW": 15,
+    "KMER_k2": 441,
+    "DR_d3": 1344
+  },
+  "total_feature_dimension": 1841,
+  "cross_validation": {
+    "folds": 5,
+    "shuffle": true,
+    "random_seed": 20261009
+  },
+  "classifier": {
+    "name": "LogisticRegression",
+    "solver": "liblinear",
+    "max_iter": 3000,
+    "C": 1.0
+  }
+}

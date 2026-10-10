@@ -1,0 +1,80 @@
+{
+  "device": "cuda",
+  "resampling": "disabled: retained classes are nearly balanced",
+  "positive_retained": 3573,
+  "negative_retained": 3571,
+  "positive_removed": 0,
+  "negative_removed": 2,
+  "retained_lengths": {
+    "31": 7144
+  },
+  "features": {
+    "AAC": 20,
+    "PWAA": 21,
+    "EBGW": 15,
+    "KMER_k2": 441,
+    "DR_d3": 1344
+  },
+  "total_features": 1841,
+  "validation": "nested StratifiedKFold: outer=5, inner=3",
+  "selection": "LightGBM split importance > 2 fit inside each inner/final training partition",
+  "candidates": [
+    {
+      "model": "LightGBM",
+      "setting": "lr0.02_leaves15",
+      "learning_rate": 0.02,
+      "num_leaves": 15,
+      "min_child_samples": 30
+    },
+    {
+      "model": "LightGBM",
+      "setting": "lr0.05_leaves31",
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20
+    },
+    {
+      "model": "LightGBM",
+      "setting": "lr0.10_leaves15",
+      "learning_rate": 0.1,
+      "num_leaves": 15,
+      "min_child_samples": 20
+    },
+    {
+      "model": "RBF-SVM",
+      "setting": "C0.3",
+      "C": 0.3
+    },
+    {
+      "model": "RBF-SVM",
+      "setting": "C1",
+      "C": 1.0
+    },
+    {
+      "model": "RBF-SVM",
+      "setting": "C3",
+      "C": 3.0
+    },
+    {
+      "model": "MLP",
+      "setting": "h128_d0.2_lr1e-3",
+      "hidden": 128,
+      "dropout": 0.2,
+      "lr": 0.001
+    },
+    {
+      "model": "MLP",
+      "setting": "h256_d0.2_lr5e-4",
+      "hidden": 256,
+      "dropout": 0.2,
+      "lr": 0.0005
+    },
+    {
+      "model": "MLP",
+      "setting": "h256_d0.4_lr5e-4",
+      "hidden": 256,
+      "dropout": 0.4,
+      "lr": 0.0005
+    }
+  ]
+}

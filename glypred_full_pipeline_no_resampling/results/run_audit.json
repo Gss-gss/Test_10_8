@@ -1,0 +1,34 @@
+{
+  "device": "cuda",
+  "positive_retained": 3573,
+  "negative_retained": 3571,
+  "positive_removed": 0,
+  "negative_removed": 2,
+  "resampling": "disabled by user request; training data is near-balanced",
+  "feature_dimensions": {
+    "AAC": 20,
+    "PWAA": 21,
+    "EBGW": 15,
+    "KMER_k2": 441,
+    "DR_d3": 1344
+  },
+  "total_features": 1841,
+  "lightgbm_selection": {
+    "importance": "split",
+    "threshold": "> 2",
+    "n_estimators": 500,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "num_leaves": 15,
+    "scope": "outer training fold only"
+  },
+  "classifier": {
+    "architecture": "BiLSTM LayerNorm MultiheadAttention GELU Dropout residual",
+    "learning_rate": 0.01,
+    "weight_decay": 0.005,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "validation_scope": "10 percent of outer training fold"
+  }
+}
